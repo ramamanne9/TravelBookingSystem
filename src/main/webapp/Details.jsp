@@ -8,16 +8,16 @@
 <title>Insert title here</title>
 <style>
         a {
-            text-decoration: none; /* Remove underline */
-            color: black; /* Set text color to black */
+            text-decoration: none; 
+            color: black; 
         }
         
         a:visited {
-            color: black; /* Ensure visited links are also black */
+            color: black; 
         }
         
         .flight-detail {
-            margin-bottom: 10px; /* Space between flight details */
+            margin-bottom: 10px; 
         }
     </style>
 </head>
