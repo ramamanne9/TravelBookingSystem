@@ -55,7 +55,7 @@
   
     
     
-    <form action="processpayment" method="POST"> <!-- Action URL to handle payment processing -->
+    <form action="processpayment" method="POST"> 
         <label for="name">Name on Card:</label>
         <input type="text" id="name" name="name" required>
 
