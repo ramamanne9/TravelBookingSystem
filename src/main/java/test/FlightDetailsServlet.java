@@ -15,12 +15,12 @@ public class FlightDetailsServlet extends HttpServlet{
   @Override
   protected void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException{
 		 
-	   // response.setContentType("text/html");
+	   
 
 
 	  HttpSession hs=req.getSession(false);
 	 String destination=req.getParameter("destination");
-	   // PrintWriter pw=response.getWriter();
+	   
 
   if(hs==null) {
     req.setAttribute("msg","flights not avialable......<br>");
@@ -30,7 +30,7 @@ public class FlightDetailsServlet extends HttpServlet{
     ArrayList<FlightDetails> al=new FlightDetailsDao().select(destination);
     hs.setAttribute("alist",al);
     req.getRequestDispatcher("Details.jsp").forward(req, res);
-   //pw.println("<html><head></head><body><a href=payment.jsp>proceed to Pay</a></body></html>");
+   
 
   }
   }
