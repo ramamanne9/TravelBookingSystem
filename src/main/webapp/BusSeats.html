@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        body {
+            background-color:white; 
+        }
+        .seat-map {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            gap: 10px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .seat {
+            width: 45px;
+            height: 60px;
+            border: 4px solid grey;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+        }
+
+        .available {
+           border-color:    grey ;   }
+
+        .selected {
+            border-color: green;
+        }
+
+        .booked {
+            border-color: yellow;
+            cursor: not-allowed;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .legend .item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .legend .color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 3px;
+        }
+
+        .clear-btn, .book-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .clear-btn button,
+        .book-btn button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: blue; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+
+        .clear-btn button:hover,
+        .book-btn button:hover {
+            background-color:  blue; 
+        }
+        .legend .color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* Make it a circle */
+            margin-right: 5px;
+        }
+
+        .color-box.available {
+            background-color: grey; /* Circle color for available seats */
+        }
+
+        .color-box.selected {
+            background-color: green; /* Circle color for selected seats */
+        }
+
+        .color-box.booked {
+            background-color: yellow; /* Circle color for booked seats */
+        }
+    </style>
+</head>
+<body>
+
+<form action="busseatservlet" method="post">
+    <div class="seat-map">
+        <div class="seat available">&#8377;1999</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat available">&#8377;1999</div>
+        <div class="seat booked">&#8377;1999</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat available">&#8377;1999</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat booked">&#8377;1900</div>
+        <div class="seat booked">&#8377;1999</div>
+        <div class="seat available">&#8377;1999</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat available">&#8377;1900</div>
+        <div class="seat booked">&#8377;1999</div>
+    </div>
+
+    <div class="legend">
+        <div class="item">
+            <div class="color-box available"></div> Available
+        </div>
+        <div class="item">
+            <div class="color-box selected"></div> Selected
+        </div>
+        <div class="item">
+            <div class="color-box booked"></div> Booked
+        </div>
+    </div>
+
+    <div class="button-group">
+        <div class="clear-btn">
+            <button type="button" onclick="clearSelection()">Clear Selection</button>
+        </div>
+        <div class="book-btn">
+            <button type="submit" formaction="payment.jsp">Proceed to pay</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    const seats = document.querySelectorAll('.seat');
+    seats.forEach(seat => {
+        seat.addEventListener('click', () => {
+            if (seat.classList.contains('booked')) return;
+
+            seat.classList.toggle('selected');
+        });
+    });
+
+    function clearSelection() {
+        seats.forEach(seat => {
+            seat.classList.remove('selected');
+        });
+    }
+</script>
+
+</body>
+</html>

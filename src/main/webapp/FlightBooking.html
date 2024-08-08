@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<form action="flightbooking" method="post">
+<div class="booking-form-box">
+<div class="booking-form">
+<label>First Name:</label>
+<input type="text" class="form-control" placeholder="firstname"name="firstname"><br>
+<label>Last Name:</label>
+<input type="text" class="form-control" placeholder="lastname"name="lastname"><br>
+<label>Mobile Number:</label>
+<input type="number" class="form-control" placeholder="mobilenumber"name="mobilenumber"><br>
+
+<label>From:</label>
+<input type="text" class="form-control" placeholder="city or airport"name="from"><br>
+<label>To:</label>
+<input type="text" class="form-control" placeholder="city or airport"name="to">
+</div>
+ 
+ <div class="input-grp">
+<label>Departing</label>
+<input type="date" class="form-control select-date" name="departure">
+</div>
+
+<div class="input-grp">
+<label>Returning</label>
+<input type="date" class="form-control select-date"name="returning">
+</div>
+
+<div class="input-grp">
+<label>	Adults</label>
+<input type="number" class="form-control select-date"value="1"name="adults">
+</div>
+
+<div class="input-grp">
+<label>Children</label>
+<input type="number" class="form-control select-date" value="0"name="children">
+</div>
+
+<div class="input-grp">
+<label>Travels Class</label>
+<Select class="custom-select"name="classtype">
+<option value="1">Economy Class</option	>
+<option value="2">Business Class</option>
+</Select>
+</div>
+<div class="radio-btn">
+<label>Way:</label>
+<input type="radio" class="btn" name="way" checked="checked"><span>Roundtrip</span>
+<input type="radio" class="btn" name="way"><span>oneway</span>
+<input type="radio" class="btn" name="way"><span>multi-city</span>
+</div>
+<div class="input-grp">
+<input type="submit" value="submit"> 
+
+</div>
+</div>
+</form>
+</body>
+</html>

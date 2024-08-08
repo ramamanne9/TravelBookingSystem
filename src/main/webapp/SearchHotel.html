@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        div {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        strike {
+            color: red;
+            font-weight: bold;
+        }
+        .price {
+            color: green;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        input[type="button"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        input[type="button"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/hotel1.jpeg" alt="Hotel 1"><br>
+        <h5>Family Hotel</h5>
+        <p>Mahialur|4.5km drive to Indira Gandhi International Airort</p>
+        <strike>&#8377;3200</strike><br>
+        <span class="price">&#8377;2800</span><br>
+        <a href="payment.jsp"><input type="button" value="Book Now"></a>
+    </div>
+    <div>
+        <img src="./images/hotel2.jpeg" alt="Hotel 2"><br>
+        <h5>Geeta Villa Hotel</h5>
+        <p>Kakorla|7.5km drive to Dwaraka Metro</p>
+        <strike>&#8377;4900</strike><br>
+        <span class="price">&#8377;4500</span><br>
+        <a href="payment.jsp"><input type="button" value="Book Now"></a>
+    </div>
+</body>
+</html>
