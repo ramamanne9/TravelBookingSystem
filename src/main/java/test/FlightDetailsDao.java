@@ -29,7 +29,7 @@ public class FlightDetailsDao {
 		}
 	}
   
-//ps.setString(1,ftd.getDestination() );
+
 
 
 	
